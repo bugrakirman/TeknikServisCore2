@@ -45,10 +45,9 @@ namespace TeknikServisCore.DAL.Migrations
                     Name = table.Column<string>(nullable: true),
                     Surname = table.Column<string>(nullable: true),
                     BirthDate = table.Column<DateTime>(nullable: false),
-                    Password = table.Column<string>(nullable: true),
-                    ConfirmPassword = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: true),
-                    RegisterDate = table.Column<DateTime>(nullable: false)
+                    RegisterDate = table.Column<DateTime>(nullable: false),
+                    ActivationCode = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

@@ -42,13 +42,13 @@ namespace TeknikServisCore.Web.Controllers
 
             ProfileEditViewModel model = new ProfileEditViewModel()
             {
-                PasswordEditViewModel =
+                PasswordEditViewModel = new PasswordEditViewModel()
                 {
-                    NewPassword =  "",
                     OldPassword = "",
+                    NewPassword = "",
                     ConfirmNewPassword = ""
                 },
-                ProfileViewModel =
+                ProfileViewModel = new ProfileViewModel()
                 {
                     UserName = user.UserName,
                     Name = user.Name,

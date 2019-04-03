@@ -10,8 +10,8 @@ using TeknikServisCore.DAL;
 namespace TeknikServisCore.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190402125238_starbucks")]
-    partial class starbucks
+    [Migration("20190403110616_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -150,8 +150,6 @@ namespace TeknikServisCore.DAL.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
-                    b.Property<string>("ConfirmPassword");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
@@ -168,8 +166,6 @@ namespace TeknikServisCore.DAL.Migrations
 
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256);
-
-                    b.Property<string>("Password");
 
                     b.Property<string>("PasswordHash");
 

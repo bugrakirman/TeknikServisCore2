@@ -1,20 +1,15 @@
 ﻿@model TeknikServisCore.Models.ViewModels.ProfileEditViewModel
-
 @{
     ViewData["Title"] = "EditProfile";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
-
             <form class="form-horizontal" asp-controller="Profile" asp-action="EditProfile" asp-antiforgery="true" method="post">
                 <div asp-validation-summary="All" class="text-danger">
-
                 </div>
                 <h2>@TempData["Message"]</h2>
-
 
                 <div class="form-group row">
                     <label class="control-label col-md-3" asp-for="@Model.ProfileViewModel.UserName">Kullanıcı Adı </label>
@@ -44,7 +39,6 @@
                         <span asp-validation-for="@Model.ProfileViewModel.Email" class="text-danger"></span>
                     </div>
                 </div>
-
                 <div class="form-group row">
                     <label class="control-label col-md-3" asp-for="@Model.ProfileViewModel.PhoneNumber">Telefon</label>
                     <div class="col-md-9">
@@ -67,20 +61,43 @@
                     </div>
                 </div>
 
-
                 <input id="submit" class="btn btn-warning " type="submit" value="Güncelle" />
-
             </form>
-
         </div>
         <div class="col-md-6">
+            @*//////////////////////*@
+            <form class="form-horizontal" asp-controller="Profile" asp-action="EditPassword" asp-antiforgery="true" method="post">
+                <div asp-validation-summary="All" class="text-danger">
+                </div>
+                <h2>@TempData["Message"]</h2>
+                <div class="form-group row">
+                    <label class="control-label col-md-3" asp-for="@Model.PasswordEditViewModel.OldPassword">Eski Şifre</label>
+                    <div class="col-md-9">
+                        <input class="form-control" type="password" asp-for="@Model.PasswordEditViewModel.OldPassword" />
+                        <span asp-validation-for="@Model.PasswordEditViewModel.OldPassword" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3" asp-for="@Model.PasswordEditViewModel.NewPassword">Şifre</label>
+                    <div class="col-md-9">
+                        <input class="form-control" type="password" asp-for="@Model.PasswordEditViewModel.NewPassword" />
+                        <span asp-validation-for="@Model.PasswordEditViewModel.NewPassword" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3" asp-for="@Model.PasswordEditViewModel.ConfirmNewPassword">Şifre Tekrar</label>
+                    <div class="col-md-9">
+                        <input class="form-control" type="password" asp-for="@Model.PasswordEditViewModel.ConfirmNewPassword" />
+                        <span asp-validation-for="@Model.PasswordEditViewModel.ConfirmNewPassword" class="text-danger"></span>
+                    </div>
+                </div>
 
-            
-          
-            @Html.PartialAsync("Partials/_EditPasswordPartial", Model.PasswordEditViewModel)
-            
-           
+                <input id="submit" class="btn btn-warning " type="submit" value="Şifreyi Güncelle" />
+            </form>
+
+            @*@Html.PartialAsync("Partials/_EditPasswordPartial", Model.PasswordEditViewModel)*@
+
+
         </div>
     </div>
 </div>
-
